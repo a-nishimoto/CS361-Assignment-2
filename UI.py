@@ -1,6 +1,5 @@
 import time
 import os
-import sys
 from watchdog.observers import Observer
 from watchdog.events import PatternMatchingEventHandler
 
@@ -67,16 +66,17 @@ def on_modified(event):
 
 if __name__ == "__main__":
 
+    # establish and start the observer
     my_event_handler = PatternMatchingEventHandler(patterns=["*"], case_sensitive=True)
     my_event_handler.on_modified = on_modified
-
     path = "."
     my_observer = Observer()
     my_observer.schedule(my_event_handler, path, recursive=True)
     my_observer.start()
 
-    start()
+    start()  # start UI prompting the user
 
+    # ensure polling of files remains at 1 Hz
     try:
         while True:
             time.sleep(1)

@@ -1,4 +1,7 @@
 import random
+import time
+
+time.sleep(5)
 
 # open file, making workable variable
 f = open("prng-service.txt", "r+")

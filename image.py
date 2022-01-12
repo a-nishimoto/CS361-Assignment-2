@@ -9,7 +9,9 @@ Limitations -- a folder entitled "pictures" with files must exist in the same fi
 """
 
 import os
+import time
 
+time.sleep(5)
 
 # create an array of photos in the ./pictures/ directory
 pic_dir = os.listdir("./pictures")
